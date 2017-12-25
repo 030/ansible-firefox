@@ -1,4 +1,10 @@
 ---
+- name: Download.
+  get_url:
+    url: https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US
+    dest: /tmp/firefox-latest
+    checksum: 122d91799f704be16525bba403686e861ccbd85862a64dd57dbda89b28fc14958c2cedebf83a3c61de1439afc4c87fcdc4666d3f237f6b0484850ab7c97995b4
+
 - name: Create desktop icon.
   copy:
     src: firefox.desktop
