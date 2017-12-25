@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
-  vars: firefox_desktop_icon: true
+  vars:
+    firefox_desktop_icon: true
   roles:
     - role_under_test
