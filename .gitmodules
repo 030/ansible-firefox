@@ -3,4 +3,4 @@
 	url = git@gist.github.com:73ef1e5ee45d8694570f334be385e181.git
 [submodule "tests/geerlingguy.test"]
 	path = tests/geerlingguy.test
-	url = git@gist.github.com:73ef1e5ee45d8694570f334be385e181.git
+	url = https://gist.github.com/73ef1e5ee45d8694570f334be385e181.git
