@@ -1,12 +1,12 @@
-Role Name
-=========
+ansible-firefox
+===============
 
-A brief description of the role goes here.
+Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/).
 
 Requirements
 ------------
 
-None
+None.
 
 Role Variables
 --------------
