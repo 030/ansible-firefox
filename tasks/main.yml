@@ -2,8 +2,14 @@
 - name: Download.
   get_url:
     url: https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US
-    dest: /tmp/firefox-latest
-    checksum: {{ firefox_checksum }}
+    dest: /tmp/firefox-latest.tar.bz2
+    checksum: "{{ firefox_checksum }}"
+
+- name: Unarchive.
+  unarchive:
+    src: /tmp/firefox-latest.tar.bz2
+    dest: /usr/lib64
+    remote_src: yes
 
 - name: Create desktop icon.
   copy:
