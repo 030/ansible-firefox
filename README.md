@@ -1,5 +1,7 @@
-ansible-firefox
-===============
+ansible-role-firefox
+====================
+
+[![Build Status](https://travis-ci.org/030/ansible-role-firefox.svg?branch=master)](https://travis-ci.org/030/ansible-role-firefox)
 
 Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/).
 
