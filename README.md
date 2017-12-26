@@ -1,7 +1,7 @@
 ansible role firefox
 ====================
 
-[![Build Status](https://travis-ci.org/030/ansible-role-firefox.svg?branch=master)](https://travis-ci.org/030/ansible-role-firefox)
+[![Build Status](https://travis-ci.org/030/ansible-firefox.svg?branch=master)](https://travis-ci.org/030/ansible-firefox)
 
 Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/). Please test the role before creating a Pull Request by issuing:
 
