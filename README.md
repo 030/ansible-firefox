@@ -6,7 +6,6 @@ ansible role firefox
 Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/). Please test the role before creating a Pull Request by issuing:
 
 ```
-chmod +x ./tests/geerlingguy.test/ansible-role-test.sh
 ./tests/geerlingguy.test/ansible-role-test.sh
 ```
 
