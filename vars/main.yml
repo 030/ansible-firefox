@@ -1,2 +1,3 @@
 ---
-# vars file for ansible-firefox
+firefox_download: /tmp/firefox-{{ firefox_version }}.tar.bz2
+firefox_bin: "{{ firefox_home }}/firefox/firefox"
