@@ -5,6 +5,7 @@ env:
   - distro: centos7
 
 script:
+  - chmod +x ./tests/geerlingguy.test/ansible-role-test.sh
   - ./tests/geerlingguy.test/ansible-role-test.sh
 
 notifications:
