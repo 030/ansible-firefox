@@ -11,6 +11,16 @@ chmod +x ./tests/geerlingguy.test/ansible-role-test.sh
 ./tests/geerlingguy.test/ansible-role-test.sh
 ```
 
+Troubleshooting
+---------------
+
+Add the following code to the tasks/main.yml in order to debug some variables.
+
+```
+- debug:
+    msg: "{{ firefox_latest_version_info_url }} {{ firefox_latest_version_info }} {{ firefox_version_latest }} {{ firefox_checksum_latest }}"
+```
+
 Requirements
 ------------
 

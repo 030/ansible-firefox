@@ -3,7 +3,5 @@
   remote_user: root
   vars:
     firefox_desktop_icon: true
-    firefox_version: 54.0.1
-    firefox_checksum: sha512:59416ec212626d225db0f12037eb68c98f564252c5f62743ec884af259d705a9310d9758bfd37bfb33c792eebb37d07824a197aff1261aa0496896482f6539cb
   roles:
     - role_under_test
