@@ -1,7 +1,7 @@
 ---
 - name: get latest version information json url
   uri:
-    url: http://releasesoftwaremoreoften.com/latestversion?name=firefox
+    url: "{{ rsmo_url }}firefox"
     return_content: yes
   register: firefox_latest_version_info_url
 
@@ -24,7 +24,7 @@
 
 - name: Download.
   get_url:
-    url: https://ftp.mozilla.org/pub/firefox/releases/{{ firefox_version }}/linux-x86_64/en-US/firefox-{{ firefox_version }}.tar.bz2
+    url: "{{ firefox_url }}/{{ firefox_version }}/linux-x86_64/en-US/firefox-{{ firefox_version }}.tar.bz2"
     dest: /tmp/firefox-{{ firefox_version }}.tar.bz2
     checksum: "{{ firefox_checksum }}"
 

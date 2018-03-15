@@ -1,3 +1,5 @@
 ---
 firefox_download: /tmp/firefox-{{ firefox_version }}.tar.bz2
 firefox_bin: "{{ firefox_home }}/firefox/firefox"
+firefox_url: "https://ftp.mozilla.org/pub/firefox/releases"
+rsmo_url: "http://api.releasesoftwaremoreoften.com/latestversion?name="
