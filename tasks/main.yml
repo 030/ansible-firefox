@@ -1,26 +1,14 @@
 ---
-- name: get latest version information json url
-  uri:
-    url: "{{ rsmo_url }}firefox"
-    return_content: yes
-  register: firefox_latest_version_info_url
-
-- name: set firefox latest version information
-  set_fact: firefox_latest_version_info="{{ firefox_latest_version_info_url.content }}"
-
-- name: set latest version
-  set_fact: firefox_version_latest="{{ firefox_latest_version_info.latestVersion }}"
-
-- name: set latest checksum
-  set_fact: firefox_checksum_latest="{{ firefox_latest_version_info.checksum }}"
+- import_tasks: get_version_from_api.yml
+  when: firefox_get_version_from_api
 
 - name: Dependencies.
   package:
     name: "{{ item }}"
   with_items:
-     - bzip2
-     - gtk3
-     - libXt
+    - bzip2
+    - gtk3
+    - libXt
 
 - name: Download.
   get_url:
