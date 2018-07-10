@@ -1,7 +1,7 @@
 ---
 # comment out when firefox_get_version_from_api is enabled
-firefox_checksum: sha512:58075442850d5e34a7eaa78e008a6f80321a09fbaa5bed698394659bc468d799d299ddad888b1def0d6b74899671e98e7aa918f247a57c42cd605b05276a9156
-firefox_version: 60.0.2
+firefox_checksum: sha512:9eab9c7b56ae920337b21953516271fd9ae1b3f3ebbd549e3e1145f96e0adb98dea082167923badf97a109a168496290c2be49965f3034667de49c1d76a48a14
+firefox_version: 61.0.1
 
 firefox_desktop_icon: false
 firefox_home: /usr/lib64/firefox-{{ firefox_version }}
