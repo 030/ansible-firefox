@@ -4,6 +4,6 @@
   vars:
     firefox_checksum: sha512:58075442850d5e34a7eaa78e008a6f80321a09fbaa5bed698394659bc468d799d299ddad888b1def0d6b74899671e98e7aa918f247a57c42cd605b05276a9156
     firefox_desktop_icon: true
-    firefox_version_latest: 60.0.2
+    firefox_version: 60.0.2
   roles:
     - role_under_test
