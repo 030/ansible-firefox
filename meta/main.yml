@@ -1,3 +1,6 @@
+---
+dependencies: []
+
 galaxy_info:
   author: 030
   description: Firefox
@@ -9,4 +12,3 @@ galaxy_info:
         - 7
   galaxy_tags:
     - webbrowser
-  dependencies: []
