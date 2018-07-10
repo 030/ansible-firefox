@@ -48,7 +48,7 @@ firefox_version: 57.0.2
 firefox_checksum: sha512:b696fe306e84927407f0c216fb8672beb33c7bf000abf6e390df52f8eeae9373d2764c6ec9678302f57fae34f7fdfb986577823528a48ee2972e13c8970382ca
 ```
 
-Search for `linux-x86_64/en-GB/firefox-`
+Search for `linux-x86_64/en-US/firefox-`
 
 The directory where firefox will be deployed could be overwritten:
 
