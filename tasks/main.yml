@@ -2,6 +2,11 @@
 - import_tasks: get_version_from_api.yml
   when: firefox_get_version_from_api
 
+- name: remove the Firefox package
+  yum:
+    name: firefox
+    state: absent
+
 - name: Dependencies.
   package:
     name: "{{ item }}"
