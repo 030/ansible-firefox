@@ -21,26 +21,28 @@
     dest: /tmp/firefox-{{ firefox_version }}.tar.bz2
     checksum: "{{ firefox_checksum }}"
 
-- name: Directory.
-  file:
-    path: "{{ firefox_home }}"
-    state: directory
-    mode: 0755
+- block:
+    - name: Create directory.
+      file:
+        path: "{{ firefox_home }}"
+        state: directory
+        mode: 0755
+    
+    - name: Unarchive.
+      unarchive:
+        src: "{{ firefox_download }}"
+        dest: "{{ firefox_home }}"
+        remote_src: yes
+        creates: "{{ firefox_bin }}"
 
-- name: Unarchive.
-  unarchive:
-    src: "{{ firefox_download }}"
-    dest: "{{ firefox_home }}"
-    remote_src: yes
-    creates: "{{ firefox_bin }}"
-
-- name: Symlink.
-  file:
-    src: "{{ firefox_bin }}"
-    dest: /usr/bin/firefox
-    state: link
-  notify:
-    - Check version.
+    - name: Symlink.
+      file:
+        src: "{{ firefox_bin }}"
+        dest: /usr/bin/firefox
+        state: link
+      notify:
+        - Check version.
+  become: true
 
 - name: Create desktop icon.
   copy:
