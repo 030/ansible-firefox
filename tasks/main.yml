@@ -2,19 +2,6 @@
 - import_tasks: get_version_from_api.yml
   when: firefox_get_version_from_api
 
-- name: remove the Firefox package
-  yum:
-    name: firefox
-    state: absent
-
-- name: Dependencies.
-  package:
-    name: "{{ item }}"
-  with_items:
-    - bzip2
-    - gtk3
-    - libXt
-
 - name: Download.
   get_url:
     url: "{{ firefox_url }}/{{ firefox_version }}/linux-x86_64/en-US/firefox-{{ firefox_version }}.tar.bz2"
@@ -22,6 +9,19 @@
     checksum: "{{ firefox_checksum }}"
 
 - block:
+    - name: remove the Firefox package
+      yum:
+        name: firefox
+        state: absent
+    
+    - name: Dependencies.
+      package:
+        name: "{{ item }}"
+      with_items:
+        - bzip2
+        - gtk3
+        - libXt
+
     - name: Create directory.
       file:
         path: "{{ firefox_home }}"
