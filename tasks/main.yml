@@ -2,45 +2,47 @@
 - import_tasks: get_version_from_api.yml
   when: firefox_get_version_from_api
 
-- name: remove the Firefox package
-  yum:
-    name: firefox
-    state: absent
-
-- name: Dependencies.
-  package:
-    name: "{{ item }}"
-  with_items:
-    - bzip2
-    - gtk3
-    - libXt
-
 - name: Download.
   get_url:
     url: "{{ firefox_url }}/{{ firefox_version }}/linux-x86_64/en-US/firefox-{{ firefox_version }}.tar.bz2"
     dest: /tmp/firefox-{{ firefox_version }}.tar.bz2
     checksum: "{{ firefox_checksum }}"
 
-- name: Directory.
-  file:
-    path: "{{ firefox_home }}"
-    state: directory
-    mode: 0755
+- block:
+    - name: remove the Firefox package
+      yum:
+        name: firefox
+        state: absent
+    
+    - name: Dependencies.
+      package:
+        name: "{{ item }}"
+      with_items:
+        - bzip2
+        - gtk3
+        - libXt
 
-- name: Unarchive.
-  unarchive:
-    src: "{{ firefox_download }}"
-    dest: "{{ firefox_home }}"
-    remote_src: yes
-    creates: "{{ firefox_bin }}"
+    - name: Create directory.
+      file:
+        path: "{{ firefox_home }}"
+        state: directory
+        mode: 0755
+    
+    - name: Unarchive.
+      unarchive:
+        src: "{{ firefox_download }}"
+        dest: "{{ firefox_home }}"
+        remote_src: yes
+        creates: "{{ firefox_bin }}"
 
-- name: Symlink.
-  file:
-    src: "{{ firefox_bin }}"
-    dest: /usr/bin/firefox
-    state: link
-  notify:
-    - Check version.
+    - name: Symlink.
+      file:
+        src: "{{ firefox_bin }}"
+        dest: /usr/bin/firefox
+        state: link
+      notify:
+        - Check version.
+  become: true
 
 - name: Create desktop icon.
   copy:
