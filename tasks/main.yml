@@ -44,11 +44,24 @@
         - Check version.
   become: true
 
-- name: Create desktop icon.
-  copy:
-    src: firefox.desktop
-    dest: /usr/share/applications/firefox.desktop
-    owner: root
-    group: root
-    mode: 0644
+- block:
+    - name: Create icons directory.
+      file:
+        path: "/usr/lib64/firefox/browser/icons"
+        state: directory
+        mode: 0755
+
+    - name: Copy firefox logo.
+      copy:
+        src: "{{ firefox_home }}/firefox/browser/chrome/icons/default/default128.png"
+        dest: /usr/lib64/firefox/browser/icons/mozicon128.png
+        remote_src: yes
+ 
+    - name: Create desktop icon.
+      copy:
+        src: firefox.desktop
+        dest: /usr/share/applications/firefox.desktop
+        owner: root
+        group: root
+        mode: 0644
   when: firefox_desktop_icon
