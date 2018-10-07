@@ -58,8 +58,8 @@
         remote_src: yes
  
     - name: Create desktop icon.
-      copy:
-        src: firefox.desktop
+      template:
+        src: firefox.desktop.j2
         dest: /usr/share/applications/firefox.desktop
         owner: root
         group: root
