@@ -47,14 +47,14 @@
 - block:
     - name: Create icons directory.
       file:
-        path: "/usr/lib64/firefox/browser/icons"
+        path: "{{ firefox_desktop_icon_path }}"
         state: directory
         mode: 0755
 
     - name: Copy firefox logo.
       copy:
         src: "{{ firefox_home }}/firefox/browser/chrome/icons/default/default128.png"
-        dest: /usr/lib64/firefox/browser/icons/mozicon128.png
+        dest: "{{ firefox_desktop_icon_dest }}"
         remote_src: yes
  
     - name: Create desktop icon.
