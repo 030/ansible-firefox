@@ -1,7 +1,7 @@
 ---
-firefox_checksum: sha512:577cdf1e1c4845e0b22c174833b0e20375443121e429a57d16f1f0e3af86533a6c27d35d8451ab25b3f7ba10ee9385d0f497866b50d4f37a81f9663137aa3395
+firefox_checksum: sha512:906376e344b9f01c5eca8a6e24386927a68613a74202062fe52de5bc1b9d1073103e9c59d19f40f33efabf0f5e4852210195691a73f1bd05db790e7c1eac5f28
 firefox_desktop_icon_path: /usr/lib64/firefox/browser/icons
 firefox_desktop_icon: false
 firefox_desktop_icon_dest: "{{ firefox_desktop_icon_path }}/mozicon128.png"
 firefox_home: /usr/lib64/firefox-{{ firefox_version }}
-firefox_version: 62.0.3
+firefox_version: 63.0
