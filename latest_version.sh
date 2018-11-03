@@ -4,9 +4,11 @@ set -e
 
 goyq() {
 	readonly GOYQ_VERSION=1.1.0
+	readonly GOYQ_VERSION_BINARY=go-yq-${GOYQ_VERSION}-linux
+
 	wget https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/go-yq-${GOYQ_VERSION}-linux
-	chmod +x go-yq-${GOYQ_VERSION}-linux
-	mv go-yq-1.0.0-linux go-yq
+	chmod +x $GOYQ_VERSION_BINARY
+	mv $GOYQ_VERSION_BINARY go-yq
 }
 
 compare() {
