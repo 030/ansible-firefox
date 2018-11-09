@@ -1,4 +1,5 @@
 *.retry
 .idea
 *.iml
-go-yg*
+go-yq*
+*.pyc
