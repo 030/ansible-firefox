@@ -1,10 +1,7 @@
 ---
-- import_tasks: get_version_from_api.yml
-  when: firefox_get_version_from_api
-
 - name: Download.
   get_url:
-    url: "{{ firefox_url }}/{{ firefox_version }}/linux-x86_64/en-US/firefox-{{ firefox_version }}.tar.bz2"
+    url: "{{ firefox_url }}"
     dest: /tmp/firefox-{{ firefox_version }}.tar.bz2
     checksum: "{{ firefox_checksum }}"
 
@@ -13,7 +10,7 @@
       yum:
         name: firefox
         state: absent
-    
+
     - name: Dependencies.
       package:
         name: "{{ item }}"
@@ -27,12 +24,12 @@
         path: "{{ firefox_home }}"
         state: directory
         mode: 0755
-    
+
     - name: Unarchive.
       unarchive:
         src: "{{ firefox_download }}"
         dest: "{{ firefox_home }}"
-        remote_src: yes
+        remote_src: true
         creates: "{{ firefox_bin }}"
 
     - name: Symlink.
@@ -53,10 +50,10 @@
 
     - name: Copy firefox logo.
       copy:
-        src: "{{ firefox_home }}/firefox/browser/chrome/icons/default/default128.png"
+        src: "{{ firefox_logo }}"
         dest: "{{ firefox_desktop_icon_dest }}"
-        remote_src: yes
- 
+        remote_src: true
+
     - name: Create desktop icon.
       template:
         src: firefox.desktop.j2
