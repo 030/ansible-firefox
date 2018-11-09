@@ -1,13 +1,16 @@
 ---
+language: python
 services: docker
 
 env:
-  - distro: centos7
+  matrix:
+    - MOLECULE_DISTRO: centos7
+
+install:
+  - pip install molecule docker
 
 script:
-  - ./latest_version.sh
-  - chmod +x ./tests/geerlingguy.test/ansible-role-test.sh
-  - ./tests/geerlingguy.test/ansible-role-test.sh
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
