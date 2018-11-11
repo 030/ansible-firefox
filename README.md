@@ -4,12 +4,7 @@ ansible role firefox
 [![Build Status](https://travis-ci.org/030/ansible-firefox.svg?branch=master)](https://travis-ci.org/030/ansible-firefox)
 [![Ansible Galaxy](https://img.shields.io/ansible/role/29226.svg)](https://galaxy.ansible.com/030/ansible_firefox)
 
-Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/). Please test the role before creating a Pull Request by issuing:
-
-```
-chmod +x ./tests/geerlingguy.test/ansible-role-test.sh
-./tests/geerlingguy.test/ansible-role-test.sh
-```
+Install the latest [Firefox](https://www.mozilla.org/en-US/firefox/).
 
 Troubleshooting
 ---------------
@@ -66,7 +61,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - role: 030.firefox
+         - role: 030.ansible_firefox
 
 License
 -------
