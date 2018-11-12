@@ -29,12 +29,10 @@ compare_and_exit_if_required() {
 }
 
 goyq() {
-	readonly EXPECTED_GOYQ_CHECKSUM=$(curl --location https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/${GOYQ_CHECKSUM_TXT} | awk '{ print $1 }')
-
+	curl --location https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/${GOYQ_CHECKSUM_TXT} -o ${GOYQ_CHECKSUM_TXT}
 	curl --location https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/${GOYQ_VERSION_BINARY_OS} -o $GOYQ_VERSION_BINARY_OS
-	readonly ACTUAL_GOYQ_CHECKSUM=$(sha512sum $GOYQ_VERSION_BINARY_OS | awk '{ print $1 }')
 
-	compare_and_exit_if_required $EXPECTED_GOYQ_CHECKSUM $ACTUAL_GOYQ_CHECKSUM
+	shasum --check $GOYQ_CHECKSUM_TXT
 
 	chmod +x $GOYQ_VERSION_BINARY_OS
 	mv $GOYQ_VERSION_BINARY_OS go-yq
