@@ -27,11 +27,7 @@ compare() {
 	readonly LATEST_VERSION=$(curl -s https://product-details.mozilla.org/1.0/firefox_versions.json | jq -r .LATEST_FIREFOX_VERSION)
 	readonly VERSION=$(./go-yq -yamlFile defaults/main.yml -key firefox_version)
 	readonly LATEST_CHECKSUM="sha512:"$(curl https://ftp.mozilla.org/pub/firefox/releases/${LATEST_VERSION}/SHA512SUMS | grep linux-x86_64/en-US/firefox-${VERSION}.tar.bz2 | sed -e "s|  linux-x86_64/en-US/firefox-${LATEST_VERSION}.tar.bz2$||g")
-
-	readonly CHECKSUM1=$(./go-yq -yamlFile defaults/main.yml -key checksum1)
-	readonly CHECKSUM2=$(./go-yq -yamlFile defaults/main.yml -key checksum2)
-	readonly CHECKSUM3=$(./go-yq -yamlFile defaults/main.yml -key checksum3)
-	readonly CHECKSUM="${CHECKSUM1}${CHECKSUM2}${CHECKSUM3}"
+	readonly CHECKSUM=$(./go-yq -yamlFile defaults/main.yml -key firefox_checksum)
 
 	if [[ "$LATEST_VERSION" != "$VERSION" ]]; then
 		echo "A newer version of Firefox is available ($LATEST_VERSION vs. $VERSION)!"
