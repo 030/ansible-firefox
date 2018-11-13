@@ -3,7 +3,7 @@
 set -e
 
 variables() {
-	readonly GOYQ_VERSION=1.1.1
+	readonly GOYQ_VERSION=2.0.0
 	readonly GOYQ_VERSION_BINARY=go-yq-${GOYQ_VERSION}
 
 	if [ "$(uname)" == "Darwin" ]; then
@@ -40,9 +40,9 @@ goyq() {
 
 compare() {
 	readonly LATEST_VERSION=$(curl -s https://product-details.mozilla.org/1.0/firefox_versions.json | jq -r .LATEST_FIREFOX_VERSION)
-	readonly VERSION=$(./go-yq -yamlFile defaults/main.yml -key firefox_version)
+	readonly VERSION=$(./go-yq .firefox_version defaults/main.yml)
 	readonly LATEST_CHECKSUM=sha512:$(curl https://ftp.mozilla.org/pub/firefox/releases/${LATEST_VERSION}/SHA512SUMS | grep linux-x86_64/en-US/firefox-${VERSION}.tar.bz2 | sed -e "s|  linux-x86_64/en-US/firefox-${LATEST_VERSION}.tar.bz2$||g")
-	readonly CHECKSUM=$(./go-yq -yamlFile defaults/main.yml -key firefox_checksum)
+	readonly CHECKSUM=$(./go-yq .firefox_checksum defaults/main.yml )
 
 	compare_and_exit_if_required $LATEST_VERSION $VERSION
 	compare_and_exit_if_required $LATEST_CHECKSUM $CHECKSUM
