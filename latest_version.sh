@@ -32,7 +32,7 @@ goyq() {
 	curl --location https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/${GOYQ_CHECKSUM_TXT} -o ${GOYQ_CHECKSUM_TXT}
 	curl --location https://github.com/030/go-yq/releases/download/${GOYQ_VERSION}/${GOYQ_VERSION_BINARY_OS} -o $GOYQ_VERSION_BINARY_OS
 
-	shasum --check $GOYQ_CHECKSUM_TXT
+	sha512sum --check $GOYQ_CHECKSUM_TXT
 
 	chmod +x $GOYQ_VERSION_BINARY_OS
 	mv $GOYQ_VERSION_BINARY_OS go-yq
@@ -51,7 +51,7 @@ compare() {
 main() {
 	variables
 	goyq
-    compare
+	compare
 }
 
 main
