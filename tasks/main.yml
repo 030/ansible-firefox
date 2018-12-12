@@ -37,8 +37,6 @@
         src: "{{ firefox_bin }}"
         dest: /usr/bin/firefox
         state: link
-      notify:
-        - Check version.
   become: true
 
 - block:

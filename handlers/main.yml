@@ -1,3 +1,0 @@
----
-- name: Check version.
-  shell: firefox -v | grep {{ firefox_version }}
