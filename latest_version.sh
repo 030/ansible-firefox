@@ -3,8 +3,8 @@
 set -e
 
 variables() {
-	readonly GOYQ_VERSION=2.0.0
-	readonly GOYQ_VERSION_BINARY=go-yq-${GOYQ_VERSION}
+	readonly GOYQ_VERSION=2.0.1
+	readonly GOYQ_VERSION_BINARY=go-yq
 
 	if [ "$(uname)" == "Darwin" ]; then
 		echo "OS not supported"
