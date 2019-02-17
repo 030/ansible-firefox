@@ -7,4 +7,4 @@ firefox_desktop_icon_dest: "{{ firefox_desktop_icon_path }}/mozicon128.png"
 firefox_home: /usr/lib64/firefox-{{ firefox_version }}
 firefox_image_path: "firefox/browser/chrome/icons/default/default128.png"
 firefox_logo: "{{ firefox_home }}/{{ firefox_image_path }}"
-firefox_version: "65.0"
+firefox_version: "65.0.1"
