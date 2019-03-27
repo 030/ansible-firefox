@@ -1,5 +1,5 @@
 ---
-firefox_checksum: sha512:07def7d3286f200471df723000e5c4ad7f22e8239b79f0df9662224ac907dc72c4270fe09183bb91a92176d65ce81580dd9059df1c4c5b2a0d36b1bf204cacd6  # yamllint disable-line rule:line-length
+firefox_checksum: sha512:ee23f32f5efe24652a21a32e23d39bf3ea566a9833352b99a051e56da2b9156852d36e922e8afd08c4910bb8e921d1a4e0f49d3dd34d7e0b369584572d7e62a2  # yamllint disable-line rule:line-length
 
 firefox_desktop_icon_path: /usr/lib64/firefox/browser/icons
 firefox_desktop_icon: false
@@ -7,4 +7,4 @@ firefox_desktop_icon_dest: "{{ firefox_desktop_icon_path }}/mozicon128.png"
 firefox_home: /usr/lib64/firefox-{{ firefox_version }}
 firefox_image_path: "firefox/browser/chrome/icons/default/default128.png"
 firefox_logo: "{{ firefox_home }}/{{ firefox_image_path }}"
-firefox_version: "65.0.1"
+firefox_version: "66.0.2"
