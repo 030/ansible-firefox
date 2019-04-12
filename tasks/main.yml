@@ -7,17 +7,14 @@
 
 - block:
     - name: remove the Firefox package
-      yum:
+      package:
         name: firefox
         state: absent
 
     - name: Dependencies.
       package:
         name: "{{ item }}"
-      with_items:
-        - bzip2
-        - gtk3
-        - libXt
+      with_items: "{{ firefox_dependencies }}"
 
     - name: Create directory.
       file:
