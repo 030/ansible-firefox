@@ -1,4 +1,10 @@
 ---
+- include_vars: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include_vars: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
 - name: Download.
   get_url:
     url: "{{ firefox_url }}"
