@@ -1,4 +1,12 @@
 ---
+- name: debian vars
+  include_vars: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: redhat vars
+  include_vars: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
 - name: Download.
   get_url:
     url: "{{ firefox_url }}"
@@ -7,17 +15,14 @@
 
 - block:
     - name: remove the Firefox package
-      yum:
+      package:
         name: firefox
         state: absent
 
     - name: Dependencies.
       package:
         name: "{{ item }}"
-      with_items:
-        - bzip2
-        - gtk3
-        - libXt
+      with_items: "{{ firefox_dependencies }}"
 
     - name: Create directory.
       file:
