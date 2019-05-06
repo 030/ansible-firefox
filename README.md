@@ -30,7 +30,8 @@ In order to create a desktop icon:
 firefox_desktop_icon: true
 ```
 
-Specify what Firefox version has to be installed:
+By default, the latest Firefox will be installed. In order to install a
+specific version, one could define a specific version:
 
 ```
 firefox_version: 57.0.2
@@ -48,7 +49,7 @@ Search for `linux-x86_64/en-US/firefox-`
 The directory where firefox will be deployed could be overwritten:
 
 ```
-firefox_home: /usr/lib64/firefox-{{ firefox_version }}
+firefox_home: /opt/firefox-{{ firefox_version }}
 ```
 
 Dependencies
