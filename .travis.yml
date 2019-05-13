@@ -8,10 +8,10 @@ env:
     - MOLECULE_DISTRO: ubuntu1804
 
 install:
-  - ./latest_version.sh
   - pip install molecule docker
 
 script:
+  - ./latest_version.sh
   - molecule test
 
 notifications:
