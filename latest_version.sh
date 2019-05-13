@@ -4,7 +4,7 @@ set -e
 
 compare_and_exit_if_required() {
 	if [[ "$1" != "$2" ]]; then
-		echo "Mismatch: $1 vs. $2"
+		echo "Mismatch. Expected: '${1}'. Actual: '${2}'."
 		exit 1
 	fi
 }
