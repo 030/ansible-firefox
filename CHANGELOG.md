@@ -16,6 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Default installation directory changed to /opt.
 - Firefox version 66.0.4.
 
-[Unreleased]: https://github.com/030/n3dr/compare/3.0.1...HEAD
-[3.0.1]: https://github.com/030/n3dr/releases/tag/3.0.1
-[3.0.0]: https://github.com/030/n3dr/releases/tag/3.0.0
+[Unreleased]: https://github.com/030/ansible-firefox/compare/3.0.1...HEAD
+[3.0.1]: https://github.com/030/ansible-firefox/releases/tag/3.0.1
+[3.0.0]: https://github.com/030/ansible-firefox/releases/tag/3.0.0
