@@ -14,10 +14,9 @@ update() {
 
 	git config user.name 030
 	git config user.email chocolatey030@gmail.com
-echo "CP0"
+
 	CHANGED=$(git status defaults/main.yml | grep modified || true)
-echo $CHANGED
-echo "CP1"
+
 	if [ -n "$CHANGED" ]; then
 		git add defaults/main.yml
 		git commit -m "Updated checksum and version to respectively '${LATEST_CHECKSUM}' and '${LATEST_VERSION}'"
@@ -30,7 +29,7 @@ tag() {
 }
 
 main() {
-#	update
+	update
 	tag
 }
 
