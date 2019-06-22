@@ -26,12 +26,11 @@ echo "CP1"
 }
 
 tag() {
-	echo "Create new tag"
-	bash <(curl -s https://gist.githubusercontent.com/030/db4d7c5495d751a1001fc425e1f14302/raw/5e375c4b7c5bc74614207796e62a8c4c7d1f39c5/increment_tag.sh)
+	bash <(curl -s https://gist.githubusercontent.com/030/db4d7c5495d751a1001fc425e1f14302/raw/24c59d676da1f18427fd6959f1fd5c6fedb2e532/increment_tag.sh)
 }
 
 main() {
-	update
+#	update
 	tag
 }
 
