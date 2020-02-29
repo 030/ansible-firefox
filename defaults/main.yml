@@ -1,7 +1,7 @@
 ---
-firefox_checksum: sha512:45182265a7fdc3059088502e9f1a9ec6be54a99138d5215f3a46b7e33384e1bdd8d21a5ef5fe5efb99ae3873f146fda9a26c028b114b46bf04c5c3e6812f4913  # yamllint disable-line rule:line-length
+firefox_checksum: sha512:611f32552333b7ae9efb5d6d6bef78db5563795de95530ed37e5621527ef84315a383eb508dda57bc148a8810a04769c8ead22ad7c7438ece1d3fbe6b1bbc4aa  # yamllint disable-line rule:line-length
 firefox_desktop_icon: false
 firefox_home: /opt/firefox-{{ firefox_version }}
 firefox_image_path: "firefox/browser/chrome/icons/default/default128.png"
 firefox_logo: "{{ firefox_home }}/{{ firefox_image_path }}"
-firefox_version: "67.0.4"
+firefox_version: "73.0.1"
