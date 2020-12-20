@@ -12,7 +12,7 @@ before_install:
   - curl https://gist.githubusercontent.com/geerlingguy/ce883ad4aec6a5f1187ef93bd338511e/raw/36612d28981d92863f839c5aefe5b7dd7193d6c6/travis-ci-docker-upgrade.sh | sudo bash  # yamllint disable-line rule:line-length
 
 install:
-  - curl https://gist.githubusercontent.com/030/fa2454b56c525286b39d549583173d8e/raw/96880514a5b94bfe57ad7614be2e181d52567978/ansible-ci-requirements.sh | sudo bash  # yamllint disable-line rule:line-length
+  - curl https://gist.githubusercontent.com/030/fa2454b56c525286b39d549583173d8e/raw/0acb5cca26dd31a65c081ee08c9a14dab914f7a2/ansible-ci-requirements.sh | sudo bash  # yamllint disable-line rule:line-length
 
 script:
   - molecule test
